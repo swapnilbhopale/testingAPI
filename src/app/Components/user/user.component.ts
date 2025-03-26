@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../Services/user.service';
 import { CommonModule } from '@angular/common';
+import { IUser } from '../../Modal/user';
 
 @Component({
   selector: 'app-user',
@@ -11,18 +12,20 @@ import { CommonModule } from '@angular/common';
   styleUrl: './user.component.css',
 })
 export class UserComponent implements OnInit {
-  usersData: any[] = [];
-
+  usersData: IUser[] = [];
   filteredUsers: any[] = [];
   searchQuery: string = '';
   ngOnInit(): void {
     this.tableData();
   }
   constructor(private userServ: UserService, private http: HttpClient) {}
+
   tableData() {
     this.http.get('https://dummyjson.com/users').subscribe((res: any) => {
-      console.log(res, 'user-------------');
-      this.usersData = res.users;
+      this.usersData = [res.users[0]];
+      // console.log(this.usersData[0].firstName, 'user-------------');
+      // this.usersData = res.filter((res: any) => res.users.id == 1);
+
       this.filteredUsers = this.usersData;
     });
   }

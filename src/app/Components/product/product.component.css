@@ -1,4 +1,9 @@
-.user-image {
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+.product-image {
   width: 80px;
   height: 80px;
 }

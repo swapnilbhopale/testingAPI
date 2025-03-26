@@ -1,18 +1,14 @@
 <div class="navbar">
   <div>
     <ul>
-      <li>
-        <a routerLink="/profile"> Profile </a>
-      </li>
-      <li><a routerLink="/user">User</a></li>
-      <li><a routerLink="/product">Product</a></li>
+      <li routerLink="/profile">Profile</li>
+      <li routerLink="/user">User</li>
+      <li routerLink="/product">Product</li>
     </ul>
   </div>
   <div>
     <ul>
-      <li>
-        <a routerLink="/" (click)="logout()">LogOut </a>
-      </li>
+      <li routerLink="/" (click)="logout()">LogOut</li>
     </ul>
   </div>
 </div>

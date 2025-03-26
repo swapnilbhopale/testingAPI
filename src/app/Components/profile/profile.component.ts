@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { UserService } from '../../Services/user.service';
-import { IUser } from '../../Modal/user.modal';
+import { IUser } from '../../Modal/user';
 
 @Component({
   selector: 'app-profile',
@@ -20,6 +20,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
   userProfileData() {
     this.userServ.getUser().subscribe((res: any) => {
       this.profileData = res;
+      // console.log(res);
     });
   }
   ngOnDestroy(): void {}
