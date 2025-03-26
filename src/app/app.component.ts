@@ -1,39 +1,28 @@
-import { UserService } from './Services/user.service';
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { Component } from '@angular/core';
+import { NavbarComponent } from './Components/navbar/navbar.component';
+import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ReactiveFormsModule],
+  imports: [CommonModule, RouterOutlet, NavbarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'app';
-  loginForm!: FormGroup;
-  constructor(private userServ: UserService) {}
-  ngOnInit(): void {
-    this.initializeForm();
-  }
 
-  initializeForm() {
-    this.loginForm = new FormGroup({
-      username: new FormControl('emilys'),
-      password: new FormControl('emilyspass'),
-    });
-  }
+  // isAuthenticated(): boolean {
+  //   const token = localStorage.getItem('token');
+  //   return !!token;
+  // }
 
-  login() {
-    const loginData = this.loginForm.value;
-    this.userServ.loginUser(loginData).subscribe({
-      next: (res: any) => {
-        console.log(res);
-      },
-      error: (error) => {
-        console.log(error);
-      },
-    });
+  isAuthenticated(): boolean {
+    if (typeof window !== 'undefined' && localStorage) {
+      const token = localStorage.getItem('token');
+      return !!token;
+    }
+    return false;
   }
 }
