@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UserService } from '../../Services/user.service';
+import { LoginService } from '../../Services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +12,7 @@ import { UserService } from '../../Services/user.service';
 })
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
-  constructor(private userServ: UserService, private router: Router) {}
+  constructor(private userServ: LoginService, private router: Router) {}
   ngOnInit(): void {
     this.initializeForm();
   }
@@ -29,9 +29,9 @@ export class LoginComponent implements OnInit {
     this.userServ.loginUser(loginData).subscribe({
       next: (res: any) => {
         console.log(res);
-        // this.router.navigateByUrl('profile')
         localStorage.setItem('token', res.accessToken);
-        this.router.navigate(['profile']);
+        // this.router.navigateByUrl('profile');
+        // this.router.navigate(['profile']);
       },
       error: (error) => {
         console.log(error);

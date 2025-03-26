@@ -1,0 +1,29 @@
+.card {
+  width: 500px;
+  height: 250px;
+  padding: 50px 0;
+  margin: auto;
+  margin-top: 100px;
+  border: 1px solid rgb(214, 212, 212);
+  border-radius: 20px;
+  text-align: center;
+}
+.profile-img {
+  border: 1px solid rgb(154, 150, 150);
+  border-radius: 50%;
+}
+.profile-name {
+  margin: 5px 0 10px;
+  font-size: 30px;
+  font-weight: bold;
+}
+.profile-gender {
+  margin: 5px 0 10px;
+
+  font-size: 20px;
+  font-weight: bold;
+}
+.profile-email {
+  font-size: 20px;
+  margin: 0px;
+}

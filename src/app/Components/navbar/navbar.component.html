@@ -1,11 +1,18 @@
 <div class="navbar">
-  <ul>
-    <li>
-      <a routerLink="/profile" routerLinkActive="router-link-active">
-        Profile
-      </a>
-    </li>
-    <li><a routerLink="/user">Users</a></li>
-    <li><a routerLink="/product">Product</a></li>
-  </ul>
+  <div>
+    <ul>
+      <li>
+        <a routerLink="/profile"> Profile </a>
+      </li>
+      <li><a routerLink="/user">User</a></li>
+      <li><a routerLink="/product">Product</a></li>
+    </ul>
+  </div>
+  <div>
+    <ul>
+      <li>
+        <a routerLink="/" (click)="logout()">LogOut </a>
+      </li>
+    </ul>
+  </div>
 </div>
