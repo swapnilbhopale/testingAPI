@@ -7,3 +7,24 @@
   width: 80px;
   height: 80px;
 }
+
+.sort-img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+.sort-wrapper {
+  padding: 5px;
+  background-color: rgb(246, 207, 159);
+}
+.sort-wrapper:hover {
+  background-color: rgb(161, 161, 159);
+}
+th,
+td {
+  text-align: center;
+  vertical-align: middle;
+}
+.price {
+  width: 150px;
+}

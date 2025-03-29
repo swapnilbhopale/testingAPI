@@ -22,7 +22,9 @@ export class UserComponent implements OnInit {
 
   tableData() {
     this.http.get('https://dummyjson.com/users').subscribe((res: any) => {
-      this.usersData = [res.users[0]];
+      // this.usersData = [res.users[0]];
+      this.usersData = res.users.slice(0, 10);
+
       // console.log(this.usersData[0].firstName, 'user-------------');
       // this.usersData = res.filter((res: any) => res.users.id == 1);
 
